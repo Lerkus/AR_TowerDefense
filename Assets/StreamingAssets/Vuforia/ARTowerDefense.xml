@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="PlayRedFin" size="1.000000 1.000000" />
+    <ImageTarget name="PlayBlueFin" size="1.000000 1.000000" />
+    <ImageTarget name="PauseRedFin" size="1.000000 1.000000" />
+    <ImageTarget name="PauseBlueFin" size="1.000000 1.000000" />
+    <ImageTarget name="HomeRedFin" size="1.000000 1.000000" />
+    <ImageTarget name="HomeBlueFin" size="1.000000 1.000000" />
+    <ImageTarget name="3RedFin" size="1.000000 1.000000" />
+    <ImageTarget name="3BlueFin" size="1.000000 1.000000" />
+    <ImageTarget name="2RedFin" size="1.000000 1.000000" />
+    <ImageTarget name="2BlueFin" size="1.000000 1.000000" />
+    <ImageTarget name="1RedFin" size="1.000000 1.000000" />
+    <ImageTarget name="1BlueFin" size="1.000000 1.000000" />
+  </Tracking>
+</QCARConfig>
