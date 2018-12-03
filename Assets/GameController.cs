@@ -20,7 +20,8 @@ public class GameController : MonoBehaviour {
     public void replaceBoard(Vector3 nullpoint)
     {
         Vector2 aPosition = c.WorldToScreenPoint(nullpoint);
-       
+       if (p!= null)
         p.PerformHitTest(aPosition);
+       
     }
 }
