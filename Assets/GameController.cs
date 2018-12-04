@@ -4,9 +4,10 @@ using UnityEngine;
 using Vuforia;
 
 public class GameController : MonoBehaviour {
+    
     public Camera c;
     public PlaneFinderBehaviour p;
-
+    
     // Use this for initialization
     void Start () {
 		
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour {
 		
 	}
 
+    
     public void replaceBoard(Vector3 nullpoint)
     {
         Vector2 aPosition = c.WorldToScreenPoint(nullpoint);
@@ -24,4 +26,6 @@ public class GameController : MonoBehaviour {
         p.PerformHitTest(aPosition);
        
     }
+    
+    
 }
