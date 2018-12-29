@@ -46,9 +46,21 @@ public class CreepController : MonoBehaviour {
 
     private void move()
     {
-        if (gameObject != null)
+        try
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, Target.transform.position, walkspeed);
+        }
+        catch (NullReferenceException e)
+        {
+
+        }
+        catch (MissingReferenceException e)
+        {
+
+        }
+        catch (UnassignedReferenceException e)
+        {
+
         }
     }
 

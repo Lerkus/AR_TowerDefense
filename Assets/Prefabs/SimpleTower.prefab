@@ -71,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575788245314844}
   - component: {fileID: 114863580962873762}
+  - component: {fileID: 136534507240276096}
   m_Layer: 0
   m_Name: SimpleTower
   m_TagString: Untagged
@@ -552,6 +553,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   landingpad: {fileID: 0}
   positionalTolerance: 10
+--- !u!136 &136534507240276096
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150981226048644}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 50
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136675968938122300
 CapsuleCollider:
   m_ObjectHideFlags: 1
