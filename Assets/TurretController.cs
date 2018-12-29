@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour {
     private bool shooting = false;
+    private bool shouldShoot = false;
     private barrelController[] barrels;
     private int NextBarrel = 0;
     private float lastShot = 0;
@@ -55,15 +56,15 @@ public class TurretController : MonoBehaviour {
            
 
         }
-        if (Target == null)
+        if (Target != null && shouldShoot)
         {
-            StopShooting();
+            shooting = true;
         }
         else
         {
-            StartShooting();
+            shooting = false;
         }
-
+        
 
 
 
@@ -88,11 +89,11 @@ public class TurretController : MonoBehaviour {
 
     public void StartShooting()
     {
-        shooting = true;
+        shouldShoot = true;
     }
     public void StopShooting()
     {
-        shooting = false;
+        shouldShoot = false;
     }
 
 

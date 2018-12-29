@@ -18,27 +18,28 @@ public class BaseController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+
         Vector3 newPoint = new Vector3(0,0,0);
-        Vector3 tar;
+        Vector3 nextTarget;
 
         switch (currentFlightStatus)
         {
             case flightstatus.starting:
-                tar = new Vector3(transform.position.x, crusingHeight, transform.position.z);
-                newPoint = Vector3.MoveTowards(transform.position, tar, flightspeed);
-                if (transform.position == tar)
+                nextTarget = new Vector3(transform.position.x, crusingHeight, transform.position.z);
+                newPoint = Vector3.MoveTowards(transform.position, nextTarget, flightspeed);
+                if (transform.position == nextTarget)
                     currentFlightStatus = flightstatus.cruising;
                 break;
             case flightstatus.cruising:
-                tar = new Vector3(moveTarget.x, crusingHeight, moveTarget.z);
-                newPoint = Vector3.MoveTowards(transform.position, tar, flightspeed);
-                if (transform.position == tar)
+                nextTarget = new Vector3(moveTarget.x, crusingHeight, moveTarget.z);
+                newPoint = Vector3.MoveTowards(transform.position, nextTarget, flightspeed);
+                if (transform.position == nextTarget)
                     currentFlightStatus = flightstatus.landing;
                 break;
             case flightstatus.landing:
-                tar = new Vector3(moveTarget.x, 0, moveTarget.z); 
-                newPoint = Vector3.MoveTowards(transform.position, tar, flightspeed);
-                if (transform.position == tar)
+                nextTarget = new Vector3(moveTarget.x, 0, moveTarget.z); 
+                newPoint = Vector3.MoveTowards(transform.position, nextTarget, flightspeed);
+                if (transform.position == nextTarget)
                     currentFlightStatus = flightstatus.landed;
                 break;
             case flightstatus.landed:
