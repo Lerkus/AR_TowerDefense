@@ -49,7 +49,7 @@ public class BaseController : MonoBehaviour {
                 break;
 
         }
-
+        Debug.Log(currentFlightStatus.ToString() + newPoint.ToString());
 
 
 
@@ -67,7 +67,7 @@ public class BaseController : MonoBehaviour {
             currentFlightStatus = flightstatus.starting;
            
         }
-        if (currentFlightStatus == flightstatus.landing && (target.z != gameObject.transform.position.z || target.x != gameObject.transform.position.x))
+        if (currentFlightStatus == flightstatus.landing && moveTarget != target)
         {
             currentFlightStatus = flightstatus.starting;
         }
