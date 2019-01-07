@@ -49,7 +49,6 @@ public class BaseController : MonoBehaviour {
                 break;
 
         }
-        Debug.Log(currentFlightStatus.ToString() + newPoint.ToString());
 
 
 

@@ -21,7 +21,6 @@ public class BulletController : MonoBehaviour {
         if (other.tag == "Creep")
         {
             other.GetComponent<CreepController>().Hitpoints -= Damage;
-            Debug.Log("Hit");
             GameObject.Destroy(gameObject);
             
         }

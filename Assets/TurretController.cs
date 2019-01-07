@@ -18,6 +18,7 @@ public class TurretController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         barrels = GetComponentsInChildren<barrelController>();
+        gameObject.transform.position = Target.transform.position;
     }
 	
 	// Update is called once per frame
@@ -25,16 +26,11 @@ public class TurretController : MonoBehaviour {
 
         try
         {
-
+            gameObject.transform.LookAt(gameObject.transform.position + CalculateAimVec(Target.transform.position, Target.transform.rotation, Target.GetComponent<CreepController>().walkspeed, gameObject.transform.position, 5000f));
             //TODO: calculate compensationAngle
             if (useGravityCompensation)
             {
-                gameObject.transform.LookAt(Target.transform.position);
                 gameObject.transform.Rotate(-compesationAngle, 0, 0);
-            }
-            else
-            {
-                gameObject.transform.LookAt(Target.transform.position);
             }
 
         }
@@ -122,5 +118,14 @@ public class TurretController : MonoBehaviour {
         {
             possTargets.Add(other.gameObject);
         }
+    }
+
+    private Vector3 CalculateAimVec(Vector3 targetPos, Quaternion targetRot, float targetSpeed, Vector3 myPos, float bulletSpeed)
+    {
+        Vector3 tarDir =  targetRot * Vector3.forward;
+        Vector3 shotDir = (targetPos / bulletSpeed) - (myPos / bulletSpeed) + (tarDir * (targetSpeed / bulletSpeed));
+
+
+        return shotDir;
     }
 }

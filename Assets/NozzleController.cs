@@ -18,7 +18,6 @@ public class NozzleController : MonoBehaviour {
 
     public void Shoot()
     {
-        Debug.Log("Bang");
         Rigidbody newBullet = Instantiate(bullet,gameObject.transform.position,gameObject.transform.rotation,null);
         newBullet.AddForce(this.transform.forward.normalized * speed);
         ps.Play();

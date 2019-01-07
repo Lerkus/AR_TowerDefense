@@ -19,7 +19,6 @@ public class PseudoARController : MonoBehaviour {
             CurrentTarget++;
             if (CurrentTarget >= imageTargets.Length)
                 CurrentTarget = 0;
-            Debug.Log("currentTarget:" + CurrentTarget);
 
         }
         if (Input.GetAxis("Horizontal") > 0)

@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ImageTargetTest.unity
     guid: a11f0c5c49c573c41a85e530c39da1bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GroundPlaneTest.unity
     guid: 6fb32f6f8e5a94d46b29646be470d770
   - enabled: 0
     path: Assets/Scenes/GrounPlane-ImageTargetMashTest.unity
     guid: 717d8cef13c6cf6459bbc8d15f311fac
+  - enabled: 1
+    path: Assets/Scenes/AR_Towerdefense.unity
+    guid: b8a3b658898ece644b2dcb71cb94f886
   m_configObjects: {}

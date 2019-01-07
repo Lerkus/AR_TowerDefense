@@ -24,7 +24,7 @@ public class CreepController : MonoBehaviour {
             if (ex is MissingReferenceException ||  ex is UnassignedReferenceException || ex is NullReferenceException)
             {
                 if (GameObject.FindGameObjectsWithTag("Home").Length == 0)
-                    Debug.Log("Lose");
+                    GameController.loose();
                 else
                     Target = GameObject.FindGameObjectsWithTag("Home")[0];
             }

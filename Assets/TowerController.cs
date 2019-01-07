@@ -27,11 +27,9 @@ public class TowerController : MonoBehaviour {
 
 
 
-
         if(baseC.currentFlightStatus == BaseController.flightstatus.landed)
         {
             turret.StartShooting();
-            Debug.Log("landed");
         }
         else
         {

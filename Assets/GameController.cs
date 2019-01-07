@@ -18,6 +18,16 @@ public class GameController : MonoBehaviour {
 		
 	}
 
+    public static void loose()
+    {
+        Time.timeScale = 0;
+        Debug.Log("loose");
+    }
+    public static void win()
+    {
+        Time.timeScale = 0;
+        Debug.Log("win");
+    }
     
     public void replaceBoard(Vector3 nullpoint)
     {
