@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Vuforia;
 
-public class TowerController : MonoBehaviour {
+public class TowerController : MonoBehaviour , ITrackableEventHandler{
 
     public GameObject landingpad;
     public float positionalTolerance;
@@ -10,10 +12,41 @@ public class TowerController : MonoBehaviour {
     private TurretController turret;
 
 
+
+
+    private bool firstDect = false;
+    public void OnTrackableStateChanged(TrackableBehaviour.Status previousStatus, TrackableBehaviour.Status newStatus)
+    {
+        if (newStatus == TrackableBehaviour.Status.DETECTED ||
+            newStatus == TrackableBehaviour.Status.TRACKED ||
+            newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
+        {
+            OnTrackingFound();
+        }
+        else
+        {
+            OnTrackingLost();
+        }
+    }
+
+    private void OnTrackingLost()
+    {
+       
+    }
+
+    private void OnTrackingFound()
+    {
+        firstDect = true;
+        gameObject.transform.position = landingpad.gameObject.transform.position;
+    }
+
+
+
+
     // Use this for initialization
     void Start () {
-       
-		 baseC = GetComponentInChildren<BaseController>();
+       landingpad.GetComponent<TrackableBehaviour>().RegisterTrackableEventHandler(this);
+        baseC = GetComponentInChildren<BaseController>();
         turret = GetComponentInChildren<TurretController>();
 	}
 	
